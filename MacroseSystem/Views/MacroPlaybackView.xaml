@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="Macrose.Views.MacroPlaybackView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="570" d:DesignWidth="760"
+             Background="White">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/Macrose;component/SharedResources.xaml"/>
+    </UserControl.Resources>
+    <Grid VerticalAlignment="Stretch" Height="Auto">
+        <Grid Grid.Row="0"
+              Grid.ColumnSpan="99"
+              VerticalAlignment="Stretch">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="1,0.5" EndPoint="0,0.5">
+                    <GradientStop Color="#FF042B46" Offset="0.0"/>
+                    <GradientStop Color="#FF5CBEFF" Offset="0.55"/>
+                    <GradientStop Color="#FF0C0C0C" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Text="Macro Player" 
+                   Grid.Column="0"
+                   FontSize="14"
+                   FontWeight="Bold"
+                   FontFamily="Segoe UI"
+                   Foreground="Black"
+                   Margin="20,0,0,0"
+                   VerticalAlignment="Center">
+                <TextBlock.RenderTransform>
+                    <TranslateTransform X="1" Y="1" />
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock Text="Macro Player"
+                   FontSize="14"
+                   FontWeight="Bold"
+                   FontFamily="Segoe UI"
+                   Foreground="White"
+                   Margin="20,0,0,0"
+                   VerticalAlignment="Center">
+            </TextBlock>
+        </Grid>
+        <Grid Margin="0,15,0,0" Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" Height="Auto">
+            <ScrollViewer CanContentScroll="True" 
+                          VerticalScrollBarVisibility="Auto">
+                <DockPanel VerticalAlignment="Stretch">
+                    <ItemsControl ItemsSource="{Binding Macros}">
+                        <ItemsControl.ItemContainerStyle>
+                            <Style>
+                                <Setter Property="FrameworkElement.Margin" Value="5"/>
+                            </Style>
+                        </ItemsControl.ItemContainerStyle>
+                    </ItemsControl>
+                </DockPanel>
+            </ScrollViewer>
+        </Grid>
+        <DockPanel Grid.Row="3" Grid.Column="1">
+            <Button Content="Add Macro" 
+                    Command="{Binding AddMacroCommand}"
+                    Style="{StaticResource MetroButton}"
+                    HorizontalAlignment="Right"
+                    Width="100"/>
+        </DockPanel>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="15"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="15" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="15" />
+        </Grid.RowDefinitions>
+    </Grid>
+</UserControl>

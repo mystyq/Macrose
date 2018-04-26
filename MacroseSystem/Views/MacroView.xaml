@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="Macrose.Views.MacroView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Macrose.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/Macrose;component/SharedResources.xaml"/>
+    </UserControl.Resources>
+    <Border BorderBrush="Black" BorderThickness="1">
+        <Grid Height="50">
+            <Label Grid.Column="0" Margin="0,0,15,0" Content="{Binding FileName}" VerticalAlignment="Center" HorizontalAlignment="Right" />
+            <StackPanel Orientation="Horizontal" Height="30" Width="Auto" Grid.Column="1">
+                <Button Content="..."
+                    Command="{Binding OpenMacroCommand}"
+                    Margin="0,0,5,0" 
+                    Style="{StaticResource MetroButton}"
+                    Width="35"
+                    Height="30"/>
+                <Button Content="{Binding Hotkey}"
+                    Command="{Binding SetMacroHotkeyCommand}"
+                    Margin="0,0,5,0"
+                    Style="{StaticResource MetroButton}"
+                    Width="100"
+                    Height="30"/>
+                <Button Content="X"
+                    Command="{Binding DeleteMacroCommand}"
+                    Margin="0,0,15,0"
+                    Style="{StaticResource MetroButton}"
+                    Width="35"
+                    Height="30"/>
+            </StackPanel>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Border>
+</UserControl>

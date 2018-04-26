@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="Macrose.Views.MacroRecorderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="570" d:DesignWidth="760"
+             Background="White">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/Macrose;component/SharedResources.xaml"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid Grid.Row="0"
+              Grid.ColumnSpan="99">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="1,0.5" EndPoint="0,0.5">
+                        <GradientStop Color="#FF042B46" Offset="0.0"/>
+                        <GradientStop Color="#FF5CBEFF" Offset="0.55"/>
+                        <GradientStop Color="#FF0C0C0C" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <TextBlock Text="Record Macro" 
+                   Grid.Column="0"
+                   FontSize="14"
+                   FontWeight="Bold"
+                   FontFamily="Segoe UI"
+                   Foreground="Black"
+                   Margin="20,0,0,0"
+                   VerticalAlignment="Center">
+                    <TextBlock.RenderTransform>
+                        <TranslateTransform X="1" Y="1" />
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock Text="Record Macro"
+                   FontSize="14"
+                   FontWeight="Bold"
+                   FontFamily="Segoe UI"
+                   Foreground="White"
+                   Margin="20,0,0,0"
+                   VerticalAlignment="Center">
+                </TextBlock>
+            </Grid>
+            <GroupBox Grid.Column="1" Grid.Row="1" Margin="0,10,0,0">
+            <DataGrid Margin="0,0,0,0"
+                      CanUserAddRows="False"
+                      CanUserReorderColumns="False"
+                      CanUserResizeColumns="False"
+                      CanUserResizeRows="False"
+                      CanUserSortColumns="False"
+                      ScrollViewer.CanContentScroll="True"
+                      ItemsSource="{Binding MacroCommands}"
+                      AutoGenerateColumns="False"
+                      BorderBrush="Transparent"
+                      Background="Transparent">
+                <DataGrid.Columns>
+                    <DataGridTextColumn IsReadOnly="True" 
+                                    Binding="{Binding CommandString}" 
+                                    Header="Data" 
+                                    Width="150" />
+                    <DataGridTextColumn IsReadOnly="False" 
+                                    Binding="{Binding Delay, Mode=TwoWay}" 
+                                    Header="Delay (ms)" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+        <Grid Grid.ColumnSpan="2" Grid.Row="2">
+            <ContentControl Content="{Binding Path=Commands}"
+                            ContentTemplate="{StaticResource HorizontalCommandsTemplate}" />
+        </Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="15"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="15" />
+        </Grid.RowDefinitions>
+    </Grid>
+</UserControl>
