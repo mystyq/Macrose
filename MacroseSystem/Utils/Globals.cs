@@ -13,5 +13,10 @@ namespace Macrose.Utils
             if (Application.Current == null) return;
             Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, (Action)(() => { }));
         }
+
+        private static void Test()
+        {
+            
+        }
     }
 }
