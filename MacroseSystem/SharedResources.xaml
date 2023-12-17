@@ -50,8 +50,8 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="Segoe UI" />
         <Setter Property="FontSize" Value="11" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+        <Setter Property="BorderBrush" Value="#004C80" />
         <Setter Property="Height" Value="50" />
         <Setter Property="Padding" Value="0,-4,0,0" />
         <Setter Property="Template">
@@ -89,14 +89,13 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <!--<Setter Property="Background" Value="#FF00243C" />-->
-                            <Setter Property="Foreground" Value="#FFFFAE00" />
+                            <Setter Property="Background" Value="#004C80" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="#ADADAD" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Foreground" Value="#FFFFAE00"/>
+                            <Setter Property="Foreground" Value="#D9D9D9"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
