@@ -116,7 +116,6 @@
     </Compile>
     <Compile Include="Utils\MacroPlayer.cs" />
     <Compile Include="ViewModels\CommandViewModel.cs" />
-    <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\MacroPlaybackViewModel.cs" />
     <Compile Include="ViewModels\MacroRecorderViewModel.cs" />
     <Compile Include="ViewModels\MacroViewModel.cs" />
@@ -125,9 +124,6 @@
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
-    <Compile Include="Views\DashboardView.xaml.cs">
-      <DependentUpon>DashboardView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\MacroPlaybackView.xaml.cs">
       <DependentUpon>MacroPlaybackView.xaml</DependentUpon>
     </Compile>
@@ -186,10 +182,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\DashboardView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\MacroPlaybackView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -222,10 +214,13 @@
     <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\dashboard.png" />
+    <Resource Include="Resources\settings.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\settings.png" />
+    <Resource Include="Resources\record.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\play.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

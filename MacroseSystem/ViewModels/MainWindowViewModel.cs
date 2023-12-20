@@ -12,7 +12,7 @@ namespace Macrose
         public MainWindowViewModel()
             : base("Macrose")
         {
-            this.ActivateView("Dashboard");
+            this.ActivateView("MacroPlayback");
         }
 
         public ObservableCollection<UserControl> Views
@@ -40,7 +40,8 @@ namespace Macrose
 
         protected override void CreateCommands()
         {
-            Commands.Add(new CommandViewModel("Dashboard", "dashboard.png", new DelegateCommand(x => this.ActivateView("Dashboard"))));
+            Commands.Add(new CommandViewModel("Macro Player", "play.png", new DelegateCommand(x => this.ActivateView("MacroPlayback"))));
+            Commands.Add(new CommandViewModel("Record Macro", "record.png", new DelegateCommand(x => this.ActivateView("MacroRecorder"))));
             Commands.Add(new CommandViewModel("Settings", "settings.png", new DelegateCommand(x => this.ActivateView("Settings"))));
         }
 
@@ -68,10 +69,6 @@ namespace Macrose
             WorkspaceViewModel viewModel = null;
             switch (displayName)
             {
-                case "Dashboard":
-                    view = new DashboardView();
-                    viewModel = new DashboardViewModel();
-                    break;
                 case "Settings":
                     view = new SettingsView();
                     viewModel = new SettingsViewModel();

@@ -82,7 +82,7 @@
                                           Grid.Column="3" />
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="25"/>
-                            <ColumnDefinition Width="20" /> <!-- image w/h -->
+                            <ColumnDefinition Width="10" /> <!-- image w/h -->
                             <ColumnDefinition Width="10" />
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
